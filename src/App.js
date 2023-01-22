@@ -16,7 +16,7 @@ import ResetPassword from './Components/ResetPassword';
 import Header from './Components/Header';
 import DashBoard from './Components/DashBoard/DashBoard';
 
-const socket = io.connect('http://localhost:8000');
+const socket = io.connect('https://chat-app-3bhg.onrender.com');
 
 function App() {
   const [user, setUser, loading] = useFindUser();
@@ -30,7 +30,7 @@ function App() {
             
               <Route path="/" element={<DashBoard/>} />
               <Route path='/login' element={<Login />} />
-              <Route path="//register" element={<Register/>} />
+              <Route path="/register" element={<Register/>} />
               <Route path="/forgotPassword" element={<ForgotPassword />} />
               <Route path="/passwordReset" element={<ResetPassword />} />
               <Route path='/chatroom' element={<JoinChat socket={socket} />} />
